@@ -1,2 +1,5 @@
 # aa
-Personal Portfolio
+#### Created by Aaron Steinberg
+My Personal Portfolio
+
+## List of projects
