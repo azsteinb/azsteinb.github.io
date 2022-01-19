@@ -1,5 +1,5 @@
-# aa
+# aa.codes, my personal portfolio
 #### Created by Aaron Steinberg
-My Personal Portfolio
 
-## List of projects
+## Tech used
++ vue.js
