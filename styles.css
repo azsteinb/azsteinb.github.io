@@ -1,0 +1,46 @@
+body {
+	background-color: cyan;
+	color: black;
+	font-size: 1rem;
+}
+
+
+a {
+	color: purple;
+}
+
+.hd {
+	border: 0.5vh solid black;
+	text-align: center;
+	scale: 75%;
+}
+
+.resumeEntry {
+	border-bottom: 1px solid black;
+	margin-left: 1vw;
+}
+
+.sectionTitle {
+	font-size: 1.1rem;
+}
+
+.job {
+	border-bottom: 1px dashed black;
+	margin-left: 1vw;
+	border-left: 1px dashed black;
+	padding-left: 1vw;
+	max-width: 80vw;
+}
+
+.last {
+	border-bottom: 0px;
+}
+
+.narrower {
+	max-width: 30vw;
+}
+
+.footer {
+	text-align: center;
+	font-size: 2vh;
+}
