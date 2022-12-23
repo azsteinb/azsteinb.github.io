@@ -11,17 +11,30 @@ a {
 
 .hd {
 	border: 0.5vh solid black;
+	background-image: linear-gradient(gold, transparent, transparent, transparent);
 	text-align: center;
 	scale: 75%;
 }
 
+.center {
+	text-align: center;
+}
+
 .resumeEntry {
 	border-bottom: 1px solid black;
-	margin-left: 1vw;
+	margin-left: 2vw;
+	padding-bottom: 0.3rem;
+	margin-bottom: 0.3rem;
 }
+
+
 
 .sectionTitle {
 	font-size: 1.1rem;
+}
+
+h2{
+	font-weight: bolder;
 }
 
 .job {
@@ -32,15 +45,28 @@ a {
 	max-width: 80vw;
 }
 
+.emph {
+	font-weight: 500;
+}
+
+.date {
+	font-weight: 300;
+}
+
 .last {
 	border-bottom: 0px;
 }
 
 .narrower {
-	max-width: 30vw;
+	max-width: 90.3%;
 }
 
 .footer {
 	text-align: center;
 	font-size: 2vh;
+}
+
+.half {
+	width: 45vw;
+	float: left;
 }
