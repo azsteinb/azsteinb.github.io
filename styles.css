@@ -1,3 +1,12 @@
+@keyframes zoomIn {
+	0% {
+		  transform: scale(50%);
+	}
+	100% {
+		  transform: scale(100%);
+	}
+  }
+
 html{
 	background-color: white;
 }
@@ -5,6 +14,7 @@ html{
 body {
 	color: black;
 	font-size: 1rem;
+	animation: 1s ease-out 0s 1 zoomIn;
 }
 
 
