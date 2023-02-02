@@ -24,7 +24,7 @@ a {
 
 .hd {
 	border: 0.5vh solid black;
-	background-image: linear-gradient(cyan, transparent, transparent, white);
+	/* background-image: linear-gradient(cyan, transparent, transparent, white); */
 	text-align: center;
 	scale: 75%;
 }
