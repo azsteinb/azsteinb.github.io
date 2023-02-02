@@ -13,7 +13,7 @@ html{
 
 body {
 	color: black;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	animation: 1s ease-out 0s 1 zoomIn;
 }
 
@@ -35,9 +35,9 @@ a {
 
 .resumeEntry {
 	border-bottom: 1px solid black;
-	margin-left: 2vw;
-	padding-bottom: 0.3rem;
-	margin-bottom: 0.3rem;
+	margin-left: 1vw;
+	padding-bottom: 0.1rem;
+	margin-bottom: 0.1rem;
 }
 
 
@@ -55,7 +55,7 @@ h2{
 	margin-left: 1vw;
 	border-left: 1px dashed black;
 	padding-left: 1vw;
-	max-width: 80vw;
+	max-width: max-content;
 }
 
 .emph {
@@ -70,9 +70,9 @@ h2{
 	border-bottom: 0px;
 }
 
-.narrower {
+/* .narrower {
 	max-width: 90.3%;
-}
+} */
 
 .footer {
 	text-align: center;
@@ -85,5 +85,5 @@ h2{
 }
 
 p{
-	max-width: 80%;
+	max-width: 100%;
 }
