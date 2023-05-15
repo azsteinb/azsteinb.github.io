@@ -35,6 +35,7 @@ a {
 .bioBox{
     color: #50fa7b;
     margin-left: 4%;
+    max-width: 50%
 }
 
 .codeChunk {
