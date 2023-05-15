@@ -1,89 +1,52 @@
-@keyframes zoomIn {
-	0% {
-		  transform: scale(50%);
-	}
-	100% {
-		  transform: scale(100%);
-	}
-  }
-
-html{
-	background-color: white;
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f8f8f2;
+    background-color: #282a36;
 }
-
-body {
-	color: black;
-	font-size: 0.8rem;
-	animation: 1s ease-out 0s 1 zoomIn;
-}
-
 
 a {
-	color: purple;
+    color: #f8f8f2;
 }
 
-.hd {
-	border: 0.5vh solid black;
-	/* background-image: linear-gradient(cyan, transparent, transparent, white); */
-	text-align: center;
-	scale: 75%;
+.mainTitle{
+    margin: 4%;
+    color: #50fa7b
 }
 
-.center {
-	text-align: center;
+.firstIndentCommentLarge{
+    margin: 4%;
+    color: #50fa7b;
+    font-size: 1.5rem;
 }
 
-.resumeEntry {
-	border-bottom: 1px solid black;
-	margin-left: 1vw;
-	padding-bottom: 0.1rem;
-	margin-bottom: 0.1rem;
+.linkBox h3{
+    text-align: center;
+
 }
 
-
-
-.sectionTitle {
-	font-size: 1.1rem;
+.linkBox {
+    margin-left: 4%;
+    max-width: fit-content;
+    border: 1px dashed;
+    padding: 1%;
+    color: #50fa7b
 }
 
-h2{
-	font-weight: bolder;
+.bioBox{
+    color: #50fa7b;
+    margin-left: 4%;
 }
 
-.job {
-	border-bottom: 1px dashed black;
-	margin-left: 1vw;
-	border-left: 1px dashed black;
-	padding-left: 1vw;
-	max-width: max-content;
+.codeChunk {
+    margin-left: 2%;
+    font-size: 2rem;
 }
 
-.emph {
-	font-weight: 500;
+.moreCode{
+    font-size: 0.8rem;
+    margin-left: 2%;
 }
 
-.date {
-	font-weight: 300;
-}
-
-.last {
-	border-bottom: 0px;
-}
-
-/* .narrower {
-	max-width: 90.3%;
-} */
-
-.footer {
-	text-align: center;
-	font-size: 2vh;
-}
-
-.half {
-	width: 45vw;
-	float: left;
-}
-
-p{
-	max-width: 90%;
+.ifStatement{
+    margin-left: 2%;
 }

@@ -8,226 +8,110 @@
 
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="styles.css" media="all" />
 
-	<link rel="stylesheet" type="text/css" href="bulma.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="styles.css" media="all" />
 </head>
 
 <body>
+    <div class="codeChunk">
+        int main() {
+    </div>
+    <h1 class="mainTitle">/**</h1>
+    <div class="firstIndentCommentLarge"> Author: Aaron Steinberg</div>
+    <div class="linkBox">
+        <h3>Links:</h3>
+        <h4>Resume: <a href="https://aa.codes/aaronsteinberg.pdf">https://aa.codes/aaronsteinberg.pdf</a></h4>
+        <h4>Github: <a href="https://github.com/azsteinb">https://github.com/azsteinb</a></h4>
+        <h4>LinkedIn: <a href="https://www.linkedin.com/in/aaron-steinberg-74b68b143/">https://www.linkedin.com/in/aaron-steinberg-74b68b143/</a></h4>
+        <h4>Email: <a href="mailto:aaron@aa.codes">aaron@aa.codes</a></h4>
+        <h4>University Email: <a href="mailto:azsteinb@ucsc.edu">azsteinb@ucsc.edu</a></h4>
+    </div>
+    <div id="bio" class="bioBox">
+        <h2>Bio:</h2>
+        <p>I am a software engineer who loves distributed systems and lower level systems programming.
+            I also love web development, and have worked with many different frameworks and tech stacks. I currently work as a contract software engineer, and I am looking to transition to a full-time role later this summer.
+            I plan on going back into academia after a few years in industry and hope to do meaningful research in distributed systems.
+            I am a big fan of free and open source software, and I am currently looking for projects to contribute to.
 
-	<div id="rb">
-		<div id="inner">
+        </p>
+        <p>
+            I am originally from Los Angeles County, but I now live in Santa Cruz, California studying at the University of California Santa Cruz. I plan on moving back to Los Angeles once I graduate from UCSC this June.
+            From there, I will continue my contract work while traveling and exploring full-time job options. I am looking for work that is both morally fulfilling and intellectually challenging.
+            I want to have impact that is a net positive to our world, and not only in an 'innovation for the sake of innovation' type of way.
+        </p>
+        <h1>
+            **/
+        </h1>
 
-			<div class="hd">
-				<div>
-					<div>
-						<h1 class="title is-1">Aaron Steinberg</h1>
-						<h2 class="title is-3">Software Engineer</h2>
-						<a href="https://aa.codes">https://aa.codes</a><br/>
-						<a href="https://aa.codes/AaronSteinberg.pdf">PDF version</a>
-					</div>
+    </div>
 
-					<div>
-						<div class="contact-info">
-							<h6><a href="mailto:aaron@aa.codes">aaron@aa.codes</a></h6>
-							<h6><a href="mailto:azsteinb@ucsc.edu">azsteinb@ucsc.edu</a></h6>
-						</div>
-					</div>
-				</div>
-			</div>
+    <div class="codeChunk">
+        <div class="moreCode">
+            int server_fd, new_socket, valread;<br>
+            struct sockaddr_in address;<br>
+            int opt = 1;<br>
+            int addrlen = sizeof(address);<br>
+            char buffer[1024];<br><br>
+            if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) < 0) { <br>
+                <div class="ifStatement">
+                    perror("socket failed"); <br>
+                    exit(EXIT_FAILURE); <br>
+                </div>
+            } <br>
+            <br>
+            if (setsockopt(server_fd, SOL_SOCKET,
+                   SO_REUSEADDR | SO_REUSEPORT, &opt,
+                   sizeof(opt))) {<br>
+                    <div class="ifStatement">
+                        perror("setsockopt failed");<br>
+                        exit(EXIT_FAILURE);
+                    </div>
 
-			<div class="resumeBody">
-				<div id="mainResumeBody">
-							<div id="education" class="resumeEntry block">
-								<div class="sectionTitle">
-									<h2 class="title is-3">Education:</h2>
-								</div>
-								<div class="job last">
-									<h2>University of California &mdash; Santa Cruz</h2>
-									<h3>Computer Science B.S. &mdash; Graduating June 2023 </h3>
-								</div>
-							</div><!-- Education -->
+            }<br><br>
+            address.sin_family = AF_INET; <br>
+            address.sin_addr.s_addr = INADDR_ANY; <br>
+            address.sin_port = htons(PORT); <br>
+            <br>
 
-					
-						<!-- <div class="columnn is-one-thirds"> -->
-							<div class="resumeEntry">
+            if (bind(server_fd, (struct sockaddr*)&address,
+             sizeof(address))
+        < 0) { <br>
+            <div class="ifStatement">
+                perror("bind failed"); <br>
+                exit(EXIT_FAILURE); <br>
+            </div>
+        } <br>
+         <br>
+        if (listen(server_fd, 3) < 0) { <br>
+            <div class="ifStatement">
+                perror("listen"); <br>
+                exit(EXIT_FAILURE); <br>
+            </div>
 
-								<div class="sectionTitle">
-									<h2 class="title is-3">Experience:</h2>
-								</div><!-- Section Title -->
-		
-								<div class="job">
-									<h2>Progenabiome</h2>
-									<h3>Bioinformatics Software Engineer Intern</h3>
-									<h4 class="date">Summer 2019, Summer 2022</h4>
-									<p>I helped with internal tool development to parse and analyze data from lab equipment. This gave me experience in the intersection of bioinformatics, computer science, and medical work. I developed the tools using Python with Pandas and other data science libraries.
-									</p>
-								</div>
-		
-								<div class="job">
-									<h2>University of California Santa Cruz IT Services</h2>
-									<h3>Google Workspace Subject Matter Expert</h3>
-									<h4 class="date">2021-present</h4>
-									<p>I write technical documentation, administrate various Google Apps services, and help
-										train first response technicians. In addition, I also create internal automation tools
-										for administering the UCSC Google Workspace. I design and implement APIs for internal tools using OpenApi standards in Node.js and Express.</p>
-								</div>
+        } <br>
 
-								<div class="job">
-									<h2>University of California Santa Cruz Baskin School of Engineering</h2>
-									<h3>Course Grader</h3>
-									<h4 class="date">Spring 2021</h4>
-									<p>I graded CSE13S, Computer Systems and C Programming. My responsibilities included
-										grading projects, essays, and exams. </p>
-								</div>
-		
-								<div class="job last">
-									<h2>University of California Santa Cruz IT Services</h2>
-									<h3>IT Help Desk Technician</h3>
-									<h4 class="date">2020-2021</h4>
-									<p>I offered technical support for staff and students at the university using
-										ServiceNow. </p>
-								</div>
-		
-							</div><!-- resume entry -->
-						<!-- </div> -->
-						<div class="columns commonMargin">
-						<div class="resumeEntry column">
-							<!-- <div class=""> -->
-								<div class="sectionTitle">
-									<h2 class="title is-3">Projects and Research:</h2>
-								</div>
-								<div class="job narrower">
-									<h2>Locally Imagined</h2>
-									<h3>Locally focused art marketplace for Santa Cruz, California</h3>
-									<p>Locally Imagined is a platform to break the glass ceiling of the art trade for hobbyist and professional artists alike.
-										This application is designed to lower the "height requirement" to be a self-sustaining artist.
-										Created using React, Go, GOA, Amazon S3, Postgresql, and Heroku. This was a group effort created using an agile workflow.
-									</p>
-									<p>Team Members: Aaron Steinberg, Dylan Rosenthal, Jake Warsaw, Richard Zeng, Theo Ho</p>
-									<p><a href="https://locallyimagined.com">Locally Imagined Website</a></p>
-								</div>
-								<div class="job narrower">
-									<h2>MediBill</h2>
-									<h3>CruzHacks 2022 Hackathon First Place Winner</h3>
-									<p>MediBill is a tool to analyze your medical bills. It was made for the CruzHacks 2022
-										Hackathon. The frontend was done in vue.js and the backend was done using Google
-										Cloud functions. MediBill won the three first place prizes. These included best UI/UX, best use of Google Cloud,
-										and the QB3 sponsored prize of $2000 for the healthcare hack category.
-									</p>
-									<p><a href="https://devpost.com/software/health-hacker-7soucr">Link to the project</a></p>
-								</div>
-								<div class="job narrower">
-									<h2>A Brief Survey of Data Placement in a Geo-Distributed Storage System using Machine
-										Learning</h2>
-									<h3>Authors: Aaron Steinberg and Yash Chhabria</h3>
-									<p>This is a survey paper written for Professor Peter Alvaro's graduate distributed
-										systems class. This research surveys distributed systems that use geo-distributed
-										storage systems for optimal data placement using a machine learning model.</p>
-									<p>
-										<a
-											href="https://docs.google.com/document/u/1/d/e/2PACX-1vRi_JSl3urSJMr-Mj7rZGkyrPzMANauaqdgXekPwFfHyUSlrkR0azLyoCxT_S0u2tvndypQ5d6vsJwy/pub">Link
-											to the paper</a>
-										<br><a href="https://github.com/palvaro/CSE232-Spring22">Link to the class
-											repository</a>
-									</p>
-								</div>
-								<div class="job narrower last">
-									<h2>Reverse Proxy Load Balancer</h2>
-									<h3>Final Project for Principles of Computer Systems Design</h3>
-									<p>Written entirely in POSIX standard C, this load balancer, while rather fundamental,
-										is multi-threaded, consistent, and <i>almost</i> fault tolerant. It estimates
-										performance, load, health, of other web servers. It routes and balances requests across
-										these other servers.</p>
-									<p>
-										<a>This project can only be viewed by request. The repo must be kept private because of
-											plagiarism concerns held by the University of California.</a>
-									</p>
-								</div>
-							<!-- </div> Resume Entry -->
-						</div>
-					</div>
+        while(1){ <br>
+            <div class="ifStatement">
+                new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen); <br>
+                meaninglessRead = read(new_socket, buffer, 1024); <br>
+                if (strcmp(meaninglessRead, "SHUTDOWN") == 0) { <br>
+                    <div class="ifStatement">
+                        break; <br>
+                    </div>
+          
 
-					
-					<div class="columns">
-						<div class="resumeEntry column is-one-quarter">
-							<div class="sectionTitle">
-								<h4 class="title is-4">Skills:</h4>
-							</div>
-							<div class="job narrower">
-								<h2>Programming Languages:</h2>
-								<p>
-									C, C++, C#, Python, Javascript, GO, Haskell, SQL, Bash
-								</p>
-							</div>
-							<div class="job narrower">
-								<h2>Technologies:</h2>
-								<p>
-									Node.js, Express, React, jQuery, GOA, Postgresql, OpenAPI, Heroku,
-									Amazon S3, Google Cloud, Linux
-									
-								</p>
-							</div>
-							<div class="job narrower last">
-								<h2>Other Skills:</h2>
-								<p>
-									SCRUM, Teamwork, Public Speaking, Software Testing, Technical Writing, Documentation, Creative Writing, 
-									Teaching, Management, Mountain Biking
-								</p>
-							</div>
-						</div>
-						<div class="resumeEntry column is-three-quarters">
-							<div class="sectionTitle">
-								<h4 class="title is-4">Course Work:</h4>
-							</div>
-							<div class="job narrower">
-								<h2>Computer Science:</h2>
-								<p>
-									Analysis of Algorithms, Computational Models, Distributed Systems, Full Stack Web Development, Introduction to Software
-									Engineering,
-									Natural Language Processing, Applied Machine Learning, Functional Programming,
-									Principals of Computer System Design, Computer Architecture, Data Structures &
-									Algorithms,
-									Computer Systems & C Programming, Computer Systems & Assembly Language,
-									Programming Abstractions in Python, Introduction to Networking, Introduction to
-									Python
-								</p>
-							</div>
-							<div class="job narrower">
-								<h2>Mathematics:</h2>
-								<p>
-									Historical Mathematics, Probability and Statistics, Applied Discrete Mathematics,
-									Linear Algebra, Vector Calculus
-								</p>
-							</div>
-							<div class="job narrower last">
-								<h2>Other Fields of Studies:</h2>
-								<p>
-									Microeconomics, Physics, Modern European History,
-									History of the Holocaust, Visual Art History of Africa/Oceania/Americas,
-									Applied Ethics, Rhetoric & Inquiry, Global Action, Power & Representation,
-									US History, Spanish
-								</p>
-							</div>
-						</div>
-					</div>
-				</div><!-- Resume Body -->
+                }<br>
+                send(new_socket, "Thanks for checking out my portfolio!", 37); <br>
+            </div>
 
+        }<br>
+        close(new_socket);<br>
+        shutdown(server_fd, SHUT_RDWR); <br>
+        return 0;<br>
+        </div>
 
-
-
-
-
-			</div><!--// yui-main -->
-		</div><!--// bd -->
-
-
-
-	</div><!-- // inner -->
-
-
-	</div><!--// doc -->
-
+        }
+    </div>
 
 </body>
 
