@@ -93,8 +93,8 @@
         while(1){ <br>
             <div class="ifStatement">
                 new_socket = accept(server_fd, (struct sockaddr*)&address, (socklen_t*)&addrlen); <br>
-                meaninglessRead = read(new_socket, buffer, 1024); <br>
-                if (strcmp(meaninglessRead, "SHUTDOWN") == 0) { <br>
+                meaninglessRead = read(new_socket, buffer, 1023); <br>
+                if (meaninglessRead && strcmp(buffer, "SHUTDOWN") == 0) { <br>
                     <div class="ifStatement">
                         break; <br>
                     </div>
