@@ -1,52 +1,186 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
 
+
 <head>
 
-	<title>Aaron Steinberg</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Aaron Steinberg</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
 
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
-    <link rel="stylesheet" type="text/css" href="newstyles.css" media="all" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="newstyles.css" media="all" /> -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        // $(window).scroll(function () {  
+        //     $("#sections").css({"margin-top": ($(window).scrollTop() + 0.05 * $(window).scrollTop()) + "px", "margin-left":($(window).scrollLeft() - 0.1 * $(window).scrollLeft()) + "px"});
+        // });
+        $(window).scroll(function () {
+            $("#sections").stop().animate({ "marginTop": ($(window).scrollTop()) + "px", "marginLeft": ($(window).scrollLeft()) + "px" }, { duration: 200, specialEasing: { height: "easeOutBounce" } });
+        });
+    </script>
 </head>
 
-<body>
-    <div class="codeChunk">
-        int main() {
-    </div>
-    <h1 class="mainTitle">/**</h1>
-    <div class="firstIndentCommentLarge typewriter"> Author: Aaron Steinberg</div>
-    <div class="linkBox">
-        <h3>Links:</h3>
-        <h4>Resume: <a href="https://aa.codes/ResumeTex/aaronsteinberg.pdf">https://aa.codes/ResumeTex/aaronsteinberg.pdf</a></h4>
-        <h4>Github: <a href="https://github.com/azsteinb">https://github.com/azsteinb</a></h4>
-        <h4>LinkedIn: <a href="https://www.linkedin.com/in/aaron-steinberg-software/">https://www.linkedin.com/in/aaron-steinberg-software/</a></h4>
-        <h4>Email: <a href="mailto:aaron@aa.codes">aaron@aa.codes</a></h4>
-        <h4>University Email: <a href="mailto:azsteinb@ucsc.edu">azsteinb@ucsc.edu</a></h4>
-    </div>
-    <div id="bio" class="bioBox">
-        <h2>Bio:</h2>
-            <p>
-                I am a software engineer with an interest in distributed systems and systems programming.
-                I also like web development. I currently work as a Software Engineer Consultant at OrganizeMyPeople, a software firm, where I create full stack web applications.
-            </p>
-            <p>
-                I love open source software and am currently looking for projects to contribute to.
-            </p>
+<body data-bs-theme="dark">
+    <div class="container-lg">
+        <h3 class="display-1 p-2 text-white text-center">
+            Aaron Steinberg
+        </h3>
+        <hr class="text-white">
+        <div class="row">
+            <div class="col-4" id="sections">
+                <h5 class="display-8">Sections:</h5>
+                <hr>
+                <div class="list-group mt-2">
+                    <a href="#"
+                        class="text-white btn btn-outline-light list-group-item-action text-center mb-2">&uparrow;
+                    </a>
+                    <a href="#bio" class="text-white btn btn-outline-light list-group-item-action text-center mb-2">Bio
+                    </a>
+                    <a href="#projects"
+                        class="text-white btn btn-outline-light list-group-item-action text-center mb-2">Projects
+                    </a>
+                    <a href="#links"
+                        class="text-white btn btn-outline-light list-group-item-action text-center mb-2">Links
+                    </a>
+                    <a href="#contact"
+                        class="text-white btn btn-outline-light list-group-item-action text-center mb-2">Contact
+                    </a>
+                </div>
+                <hr>
+            </div>
+            <div class="col-8">
+                <div class="card text-white mb-5" id="bio">
+                    <div class="card-header">
+                        <div class="lead display-5">Bio</div>
+                    </div>
+                    <div class="card-body">
+                        <p class="lead">
+                            I am a software engineer who loves systems programming and web development. I currently work
+                            as a Software Engineer Consultant at OrganizeMyPeople, a software firm, where I create full
+                            stack web applications.
+                        </p>
+                        <p>
+                            I have experience with socket programming, encryption, compression, encoding, machine
+                            learning, databases, and web development in a variety of frameworks, languages, and
+                            technologies.
+                        </p>
+                        <p>
+                            I love creating my own projects, and I have some of them on my Github. I also have some
+                            featured on this website, <a href="#projects">listed below.</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="card text-white mb-5" id="projects">
+                    <div class="card-header">
+                        <div class="lead display-5">Projects:</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-header">
+                                <b>Bflock</b>
+                            </div>
+                            <div class="card-body h">
+                                Bflock, or "Better File Locks", is a C library that makes concurrent file
+                                operations easy and safe.
+                                Bflock started out as a group of helper functions in a load balancer, but it now
+                                stands on its own.
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <b>Medibill</b>
+                            </div>
+                            <div class="card-body">
+                                Medibill is a tool that uses large datasets to analyze and help negotiate your
+                                medical bills.
+                                Medibill was created for CruzHacks 2022, and the project won multiple first
+                                place awards.
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <b>Locally Imagined</b>
+                            </div>
+                            <div class="card-body h">
+                                Locally Imagined is an art trading platform designed to help small artists and
+                                galleries navigate the violent industry of the art trade.
 
-            <p>
-                I recently graduated with a BS in Computer Science from the University of Califorina, Santa Cruz, and am currently looking to transition to a new role.
-            </p>
-        <h1>
-            **/
-        </h1>
-
-    </div>
-    <div class="codeChunk">
-        }
-    </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <b>A Brief Survey of Data Placement in a Geo-Distributed Storage System Using
+                                    ML</b>
+                            </div>
+                            <div class="card-body">
+                                This paper, written for a graduate distributed systems class, surveys machine
+                                learning based data placement on geo-distributed systems.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card text-white mb-5" id="links">
+                    <div class="card-header">
+                        <div class="lead display-5">Links:</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <a href="https://aa.codes/ResumeTex/aaronsteinberg.pdf"
+                                class="text-white btn btn-outline-light btn-lg">Resume
+                            </a>
+                            <a href="https://github.com/azsteinb" class="text-white btn btn-outline-light btn-lg">Github
+                            </a>
+                            <a href="https://www.linkedin.com/in/aaron-steinberg-software/"
+                                class="text-white btn btn-outline-light btn-lg">LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card text-white mb-5" id="contact">
+                    <div class="card-header">
+                        <div class="lead display-5">Contact Information:</div>
+                    </div>
+                    <div class="card-body">
+                        <!-- <table class="table">
+                                <thead>
+                                    <th></th>
+                                    <th></th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            Email:
+                                        </td>
+                                        <td>
+                                            <a href="mailto:aaron@aa.codes">aaron@aa.codes</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            University Email:
+                                        </td>
+                                        <td>
+                                            <a href="mailto:azsteinb@ucsc.edu">azsteinb@ucsc.edu</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        <div class="row">
+                            <div class="col-12">
+                                <i>Email:</i> <a href="mailto:aaron@aa.codes">aaron@aa.codes</a>
+                            </div>
+                            <div class="col-12">
+                                <i>University Email:</i> <a href="mailto:azsteinb@ucsc.edu">azsteinb@ucsc.edu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </body>
 
